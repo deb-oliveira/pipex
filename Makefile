@@ -6,7 +6,7 @@
 #    By: dde-oliv <dde-oliv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/03 10:00:21 by dde-oliv          #+#    #+#              #
-#    Updated: 2022/03/03 12:38:34 by dde-oliv         ###   ########.fr        #
+#    Updated: 2022/03/03 12:50:00 by dde-oliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ UTILS_FILES = 	$(UTILS_PATH)/ft_split.c \
 				$(UTILS_PATH)/ft_strdup.c \
 				$(UTILS_PATH)/ft_strlen.c \
 				$(UTILS_PATH)/ft_strtrim.c \
-				$(UTILS_PATH)/ft_substr.c 
+				$(UTILS_PATH)/ft_substr.c \
+				$(UTILS_PATH)/ft_strjoin.c 
 OBJS_PATH	=	objs
 OBJS 		=	$(addprefix $(OBJS_PATH)/,$(notdir $(SRC_FILES:.c=.o))) \
 				$(addprefix $(OBJS_PATH)/,$(notdir $(UTILS_FILES:.c=.o)))
