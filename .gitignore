@@ -5,6 +5,7 @@ objs/*
 
 #libs
 .dependencies/printf/*.a
+.dependencies/printf/libft/*.a
 
 #pipex
 pipex
