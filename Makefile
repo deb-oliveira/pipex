@@ -6,15 +6,23 @@
 #    By: dde-oliv <dde-oliv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/03 10:00:21 by dde-oliv          #+#    #+#              #
-#    Updated: 2022/03/03 11:09:06 by dde-oliv         ###   ########.fr        #
+#    Updated: 2022/03/03 12:38:34 by dde-oliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC			=	clang
-FILES_PATH	=	src
-FILES 		= 	$(FILES_PATH)/main.c
+SRC_PATH	=	src
+SRC_FILES 	= 	$(SRC_PATH)/main.c
+UTILS_PATH	=	utils
+UTILS_FILES = 	$(UTILS_PATH)/ft_split.c \
+				$(UTILS_PATH)/ft_strchr.c \
+				$(UTILS_PATH)/ft_strdup.c \
+				$(UTILS_PATH)/ft_strlen.c \
+				$(UTILS_PATH)/ft_strtrim.c \
+				$(UTILS_PATH)/ft_substr.c 
 OBJS_PATH	=	objs
-OBJS 		=	$(addprefix $(OBJS_PATH)/,$(notdir $(FILES:.c=.o)))
+OBJS 		=	$(addprefix $(OBJS_PATH)/,$(notdir $(SRC_FILES:.c=.o))) \
+				$(addprefix $(OBJS_PATH)/,$(notdir $(UTILS_FILES:.c=.o)))
 FLAGS 		= 	-Wall -Wextra -Werror
 NAME 		=	pipex
 RM 			=	rm -f
@@ -31,9 +39,12 @@ $(OBJS_PATH):
 $(NAME):	$(OBJS) $(PRINTF)
 				$(CC) $(FLAGS) $(FSANITIZE) $(OBJS) $(PRINTF) -o pipex
 
-$(OBJS_PATH)/%.o:	$(FILES_PATH)/%.c
+$(OBJS_PATH)/%.o:	$(SRC_PATH)/%.c 
 				$(CC) -c $(FLAGS) $< -o $(addsuffix .o, $(OBJS_PATH)/$(basename $(@F)))
 
+$(OBJS_PATH)/%.o:	$(UTILS_PATH)/%.c 
+				$(CC) -c $(FLAGS) $< -o $(addsuffix .o, $(OBJS_PATH)/$(basename $(@F)))
+				
 $(PRINTF):
 				@make -C $(PRINTF_PATH)
 				
