@@ -1,5 +1,10 @@
 #objs 
 objs/*
+.dependencies/printf/*.o
+.dependencies/printf/libft/*.o
+
+#libs
+.dependencies/printf/*.a
 
 #pipex
 pipex
