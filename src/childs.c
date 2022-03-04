@@ -6,7 +6,7 @@
 /*   By: dde-oliv <dde-oliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:32:34 by dde-oliv          #+#    #+#             */
-/*   Updated: 2022/03/04 17:35:32 by dde-oliv         ###   ########.fr       */
+/*   Updated: 2022/03/04 17:53:05 by dde-oliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	child_error(char **args_exec)
 {
-	if (errno == 2)
+	if (!args_exec[0])
+		ft_printf_fd(2, "pipex: %s: command not found\n", "");
+	else if (errno == 2)
 		ft_printf_fd(2, "pipex: %s: command not found\n", args_exec[0]);
 	else
 		perror("pipex");
