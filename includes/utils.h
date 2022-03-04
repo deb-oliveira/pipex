@@ -6,7 +6,7 @@
 /*   By: dde-oliv <dde-oliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 12:26:51 by dde-oliv          #+#    #+#             */
-/*   Updated: 2022/03/03 12:49:43 by dde-oliv         ###   ########.fr       */
+/*   Updated: 2022/03/04 16:54:22 by dde-oliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 
-char	**ft_split(char const *s, char *c);
+char	**ft_split2(char const *str, char *c, char *s);
 
 char	*ft_strchr(const char *str, int c);
 
