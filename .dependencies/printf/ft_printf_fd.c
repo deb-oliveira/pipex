@@ -6,21 +6,21 @@
 /*   By: dde-oliv <dde-oliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 14:11:09 by dde-oliv          #+#    #+#             */
-/*   Updated: 2021/07/08 14:12:02 by dde-oliv         ###   ########.fr       */
+/*   Updated: 2022/03/04 11:47:08 by dde-oliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft/libft.h"
 
-int	ft_printf_fd(const char *s, int fd, ...)
+int	ft_printf_fd(int fd, const char *s, ...)
 {
 	t_print	str;
 	t_print	print;
 	t_specf	specf;
 	va_list	arg;
 
-	va_start(arg, fd);
+	va_start(arg, s);
 	str.bytprint = 0;
 	str.content = ft_nputcstr_fd((char *)s, '%', fd, &str.bytprint);
 	while (*(str.content))
