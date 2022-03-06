@@ -6,7 +6,7 @@
 /*   By: dde-oliv <dde-oliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 09:32:12 by dde-oliv          #+#    #+#             */
-/*   Updated: 2022/03/04 17:42:28 by dde-oliv         ###   ########.fr       */
+/*   Updated: 2022/03/06 20:02:31 by dde-oliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	pipex_init(int argc, char **argv, t_pipex *pipex)
 	return (0);
 }
 
-int	main(int argc, char **argv)
+int	main(int argc, char **argv, char **envp)
 {
 	t_pipex	pipex;
 
@@ -60,7 +60,7 @@ int	main(int argc, char **argv)
 		return (-4);
 	}
 	if (pipex.pid1 == 0)
-		first_child(pipex, argv);
+		first_child(pipex, argv, envp);
 	pipex.pid2 = fork();
 	if (pipex.pid2 < 0)
 	{
@@ -68,7 +68,7 @@ int	main(int argc, char **argv)
 		return (-5);
 	}
 	if (pipex.pid2 == 0)
-		second_child(pipex, argv);
+		second_child(pipex, argv, envp);
 	close_files(&pipex);
 	waitpid(pipex.pid1, NULL, 0);
 	waitpid(pipex.pid2, NULL, 0);
