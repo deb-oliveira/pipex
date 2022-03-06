@@ -6,7 +6,7 @@
 /*   By: dde-oliv <dde-oliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 12:26:51 by dde-oliv          #+#    #+#             */
-/*   Updated: 2022/03/04 16:54:22 by dde-oliv         ###   ########.fr       */
+/*   Updated: 2022/03/06 17:43:52 by dde-oliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define UTILS_H
 # include <stddef.h>
 # include <stdlib.h>
+
+void	ft_build_words2(char **split, char *str, char c, char s);
+
+void	ft_count_words2(char *str, char c, char s, int *words_count);
 
 char	**ft_split2(char const *str, char *c, char *s);
 

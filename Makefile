@@ -6,7 +6,7 @@
 #    By: dde-oliv <dde-oliv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/03 10:00:21 by dde-oliv          #+#    #+#              #
-#    Updated: 2022/03/04 17:39:50 by dde-oliv         ###   ########.fr        #
+#    Updated: 2022/03/06 17:44:19 by dde-oliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ SRC_PATH	=	src
 SRC_FILES 	= 	$(SRC_PATH)/main.c \
 				$(SRC_PATH)/childs.c
 UTILS_PATH	=	utils
-UTILS_FILES = 	$(UTILS_PATH)/ft_split.c \
+UTILS_FILES = 	$(UTILS_PATH)/ft_split2_get_words.c \
+				$(UTILS_PATH)/ft_split2.c \
 				$(UTILS_PATH)/ft_strchr.c \
 				$(UTILS_PATH)/ft_strdup.c \
 				$(UTILS_PATH)/ft_strlen.c \
