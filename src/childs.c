@@ -6,7 +6,7 @@
 /*   By: dde-oliv <dde-oliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:32:34 by dde-oliv          #+#    #+#             */
-/*   Updated: 2022/03/06 17:52:56 by dde-oliv         ###   ########.fr       */
+/*   Updated: 2022/03/06 17:55:33 by dde-oliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	first_child(t_pipex	pipex, char **argv)
 {
 	char	**args_exec;
 	char	*cmd;
-	int		errno;
 
 	close(pipex.fd[0]);
 	args_exec = ft_split2(argv[2], " ", "'");
